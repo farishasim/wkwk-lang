@@ -6,6 +6,7 @@
 #define STACK_SIZE 512
 
 typedef uint8_t byte;
+typedef void (*FunctionPointer)();
 
 class VM
 {
@@ -13,8 +14,18 @@ private:
     /* data */
     byte * stack;
     byte * code;
-    int ip;
-    int sp;
+    
+    /* register */
+    int ip;     /* instruction pointer */
+    int sp;     /* stack pointer */
+    int ac;     /* accumulator */
+
+    /* instruction table */
+    FunctionPointer opcode[3] = {
+        (FunctionPointer) &fetch,
+        (FunctionPointer) &decode,
+        (FunctionPointer) &execute 
+    };
 
 public:
     VM(/* args */);
