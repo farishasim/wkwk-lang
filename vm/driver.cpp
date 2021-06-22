@@ -2,7 +2,10 @@
 
 int main() {
     byte program[100] = {
-        HALT
+        PUSH, 0x04,
+        PUSH, 0x03,
+        ADD,
+        HALT,
     };
 
     VM vm(program);

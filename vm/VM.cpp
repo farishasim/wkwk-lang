@@ -40,7 +40,6 @@ void VM::printStackTrace() {
 
 void VM::halt() {
     this->running = false;
-    cout << running << endl;
 }
 
 void VM::push() {

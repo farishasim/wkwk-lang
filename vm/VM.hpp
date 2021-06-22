@@ -13,8 +13,6 @@ using namespace std;
 class VM
 {
 private:
-    typedef void (VM::*FunctionPointer)();
-
     /* data */
     byte * stack;
     byte * code;
@@ -25,6 +23,7 @@ private:
     int ac;     /* accumulator */
 
     /* instruction table */
+    typedef void (VM::*FunctionPointer)();
     FunctionPointer opcode[10] = {
         &VM::halt,
         &VM::push,        
