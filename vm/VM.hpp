@@ -7,13 +7,14 @@
 #define STACK_SIZE 512
 
 typedef uint8_t byte;
-typedef void (*FunctionPointer)();
 
 using namespace std;
 
 class VM
 {
 private:
+    typedef void (VM::*FunctionPointer)();
+
     /* data */
     byte * stack;
     byte * code;
@@ -25,16 +26,16 @@ private:
 
     /* instruction table */
     FunctionPointer opcode[10] = {
-        (FunctionPointer) &VM::halt,
-        (FunctionPointer) &VM::push,        
-        (FunctionPointer) &VM::pop,
-        (FunctionPointer) &VM::add,
-        (FunctionPointer) &VM::sub,
-        (FunctionPointer) &VM::mul,
-        (FunctionPointer) &VM::div,
-        (FunctionPointer) &VM::mov,
-        (FunctionPointer) &VM::jmp,
-        (FunctionPointer) &VM::swap,
+        &VM::halt,
+        &VM::push,        
+        &VM::pop,
+        &VM::add,
+        &VM::sub,
+        &VM::mul,
+        &VM::div,
+        &VM::mov,
+        &VM::jmp,
+        &VM::swap,
     };
 
     bool running;

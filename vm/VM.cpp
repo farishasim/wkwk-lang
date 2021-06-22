@@ -19,21 +19,14 @@ void VM::run() {
         // fetch
         byte curr = code[ip++];
 
-        // print
-        printStackTrace();
-
         // decode
         FunctionPointer exec = opcode[curr];
 
-        cout << "current instruction : " << (int) ip << endl;
-        cout << "address : " << (void*) this->opcode[curr] << endl;
-        cout << "address : " << (void*) &VM::halt << endl;
-        cout << "address : " << (void*) exec << endl;
-
         // execute
-        (*exec)();
-
-        cout << running << endl;
+        (this->*exec)();
+        
+        // print
+        printStackTrace();
     }
 }
 
