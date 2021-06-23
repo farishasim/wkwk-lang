@@ -43,6 +43,8 @@ private:
         &VM::jgt,
         &VM::setx,
         &VM::getx,
+        &VM::print,
+        &VM::scan,
     };
 
     /* status */
@@ -77,6 +79,8 @@ public:
     void jgt();
     void setx();
     void getx();
+    void print();
+    void scan();
 };
 
 #endif

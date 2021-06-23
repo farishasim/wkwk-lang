@@ -28,12 +28,15 @@ void VM::run() {
         
         // print
         
-        printStackTrace();
+        // printStackTrace();
     }
 }
 
 void VM::printStackTrace() {
-    cout << ip << " stack : [ ";
+    cout << "ip : " << ip << endl; 
+    cout << "sp : " << sp << endl;
+    cout << "ac : " << ac << endl;    
+    cout << "stack : [ ";
     for (int i = 0; i <= sp; i++) {
         cout << (int) stack[i] << " ";
     }
@@ -101,22 +104,34 @@ void VM::popx() {
 void VM::je() {
     if ((byte) ac == stack[sp]) {
         ip = code[ip];
+    } else {
+        ip++;
     }
 }
 
 void VM::jne() {
     if ((byte) ac != stack[sp]) {
         ip = code[ip];
+    } else {
+        ip++;
     }
 }
 
 void VM::jlt() {
-    if ((byte) ac < stack[sp]) ip = code[ip];
+    if ((byte) ac < stack[sp]) {
+        ip = code[ip];
+    } else {
+        ip++;
+    }
 }
 
 
 void VM::jgt() {
-    if ((byte) ac > stack[sp]) ip = code[ip];
+    if ((byte) ac > stack[sp]) {
+        ip = code[ip];
+    }  else {
+        ip++;
+    } 
 }
 
 
@@ -134,4 +149,12 @@ void VM::getx() {
                 (code[ip++]<<8) + 
                 (code[ip++]);
     ac = stack[ptr];
+}
+
+void VM::print() {
+    cout << stack[sp];
+}
+
+void VM::scan() {
+    cin >> stack[++sp];
 }

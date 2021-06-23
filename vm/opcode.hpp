@@ -19,7 +19,9 @@
 #define JGT     0x0F
 #define SETX    0x10
 #define GETX    0x11
+#define PRINT   0x12
+#define SCAN    0x13
 
-#define NUMOP   GETX+1
+#define NUMOP   SCAN+1
 
 #endif
