@@ -1,4 +1,6 @@
 #include "VM.hpp"
+#include <fstream>
+#include <string>
 
 byte cat[100] = {
     PUSH, 0x00,
@@ -33,8 +35,25 @@ byte helloworld[100] = {
     HALT,
 };
 
-int main() {
-    byte * program = helloworld;
+int main(int argc, char ** args) {
+
+    if (argc < 2)  {
+        cout << "usage : ./driver filename\n";
+        exit(0);
+    }
+
+    byte * program;
+
+    ifstream infile;
+    infile.open(args[1]);
+    infile.seekg(0, ios::end);
+    int length = infile.tellg();
+    infile.seekg(0, ios::beg);
+    program = new byte[length];
+    infile.read((char*)program, length);
+    infile.close();
+
+    cout << length;
 
     VM vm(program);
 
