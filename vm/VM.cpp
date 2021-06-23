@@ -57,11 +57,19 @@ void VM::add() {
 
 void VM::sub() {
     sp--;
-    stack[sp] -= stack[sp];
+    stack[sp] -= stack[sp+1];
 }
 
-void VM::mul() {}
-void VM::div() {}  // integer division
+void VM::mul() {
+    sp--;
+    stack[sp] *= stack[sp+1];
+}
+
+void VM::div() {
+    sp--;
+    stack[sp] /= stack[sp+1];
+}  // integer division
+
 void VM::mov() {}
 void VM::jmp() {}
 void VM::swap() {}

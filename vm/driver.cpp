@@ -4,7 +4,7 @@ int main() {
     byte program[100] = {
         PUSH, 0x04,
         PUSH, 0x03,
-        ADD,
+        DIV,
         HALT,
     };
 

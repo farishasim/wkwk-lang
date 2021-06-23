@@ -26,7 +26,7 @@ private:
     typedef void (VM::*FunctionPointer)();
     FunctionPointer opcode[10] = {
         &VM::halt,
-        &VM::push,        
+        &VM::push,
         &VM::pop,
         &VM::add,
         &VM::sub,
@@ -37,6 +37,7 @@ private:
         &VM::swap,
     };
 
+    /* status */
     bool running;
 
 public:
