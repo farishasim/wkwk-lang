@@ -23,9 +23,11 @@ void VM::run() {
         FunctionPointer exec = opcode[curr];
 
         // execute
+        
         (this->*exec)();
         
         // print
+        
         printStackTrace();
     }
 }
@@ -71,7 +73,11 @@ void VM::div() {
 }  // integer division
 
 void VM::mov() {
-    stack[sp] = ac; 
+    int ptr =   (code[ip++]<<24) + 
+                (code[ip++]<<16) + 
+                (code[ip++]<<8) + 
+                (code[ip++]);
+    stack[ptr] = code[ip++];
 }
 
 void VM::jmp() {
@@ -84,3 +90,48 @@ void VM::swap() {
     ac = temp;
 }
 
+void VM::pushx() {
+    stack[++sp] = ac;
+}
+
+void VM::popx() {
+    ac = stack[sp--];
+}
+
+void VM::je() {
+    if ((byte) ac == stack[sp]) {
+        ip = code[ip];
+    }
+}
+
+void VM::jne() {
+    if ((byte) ac != stack[sp]) {
+        ip = code[ip];
+    }
+}
+
+void VM::jlt() {
+    if ((byte) ac < stack[sp]) ip = code[ip];
+}
+
+
+void VM::jgt() {
+    if ((byte) ac > stack[sp]) ip = code[ip];
+}
+
+
+void VM::setx() {
+    int ptr =   (code[ip++]<<24) + 
+                (code[ip++]<<16) + 
+                (code[ip++]<<8) + 
+                (code[ip++]);
+    stack[ptr] = ac;
+}
+
+void VM::getx() {
+    int ptr =   (code[ip++]<<24) + 
+                (code[ip++]<<16) + 
+                (code[ip++]<<8) + 
+                (code[ip++]);
+    ac = stack[ptr];
+}

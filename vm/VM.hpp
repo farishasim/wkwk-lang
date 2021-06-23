@@ -24,7 +24,7 @@ private:
 
     /* instruction table */
     typedef void (VM::*FunctionPointer)();
-    FunctionPointer opcode[10] = {
+    FunctionPointer opcode[NUMOP] = {
         &VM::halt,
         &VM::push,
         &VM::pop,
@@ -35,6 +35,14 @@ private:
         &VM::mov,
         &VM::jmp,
         &VM::swap,
+        &VM::pushx,
+        &VM::popx,
+        &VM::je,
+        &VM::jne,
+        &VM::jlt,
+        &VM::jgt,
+        &VM::setx,
+        &VM::getx,
     };
 
     /* status */
@@ -61,6 +69,14 @@ public:
     void mov();
     void jmp();
     void swap();
+    void pushx();
+    void popx();
+    void je();
+    void jne();
+    void jlt();
+    void jgt();
+    void setx();
+    void getx();
 };
 
 #endif

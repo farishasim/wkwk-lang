@@ -11,5 +11,15 @@
 #define MOV     0x07
 #define JMP     0x08
 #define SWAP    0x09
+#define PUSHX   0x0A
+#define POPX    0x0B
+#define JE      0x0C
+#define JNE     0x0D
+#define JLT     0x0E
+#define JGT     0x0F
+#define SETX    0x10
+#define GETX    0x11
+
+#define NUMOP   GETX+1
 
 #endif
