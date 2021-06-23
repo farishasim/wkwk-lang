@@ -29,7 +29,7 @@ byte helloworld[100] = {
     PUSH, 'h',
     PRINT,
     POP,
-    JNE, 28,
+    JNE, 30,
     HALT,
 };
 

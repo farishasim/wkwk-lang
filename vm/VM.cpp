@@ -23,11 +23,9 @@ void VM::run() {
         FunctionPointer exec = opcode[curr];
 
         // execute
-        
         (this->*exec)();
         
         // print
-        
         // printStackTrace();
     }
 }
