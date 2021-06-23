@@ -60,9 +60,15 @@ int main(int argc, char ** args) {
         cout << "usage : ./boi filename\n";
         exit(0);
     }
-    // cout << "sampaisini\n";
-    // loadProgram(args[1]);
+
     interpret(args[1]);
+
+    // for (int i=0; i<34; i++) {
+    //     if (program[i] != helloworld[i]) {
+    //         cout << "disini : " << i << endl;
+    //         exit(0);
+    //     }
+    // }
 
     VM vm(program);
 
