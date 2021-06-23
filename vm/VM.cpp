@@ -70,6 +70,17 @@ void VM::div() {
     stack[sp] /= stack[sp+1];
 }  // integer division
 
-void VM::mov() {}
-void VM::jmp() {}
-void VM::swap() {}
+void VM::mov() {
+    stack[sp] = ac; 
+}
+
+void VM::jmp() {
+    ip = code[ip];
+}
+
+void VM::swap() {
+    int temp = stack[sp];
+    stack[sp] = ac;
+    ac = temp;
+}
+
