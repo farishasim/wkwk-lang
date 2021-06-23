@@ -1,3 +1,5 @@
 *.o
 *driver
 test*
+*.py
+boi
