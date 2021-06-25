@@ -157,10 +157,10 @@ void VM::scan() {
     cin >> stack[++sp];
 }
 
-void VM::shr() {
+void VM::shl() {
     ac <<= 8;
 }
 
-void VM::shl() {
+void VM::shr() {
     ac >>= 8;
 }
