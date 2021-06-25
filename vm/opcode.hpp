@@ -21,7 +21,9 @@
 #define GETX    0x11
 #define PRINT   0x12
 #define SCAN    0x13
+#define SHR     0x14
+#define SHL     0x15
 
-#define NUMOP   SCAN+1
+#define NUMOP   SHL+1
 
 #endif

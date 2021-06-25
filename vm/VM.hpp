@@ -45,6 +45,8 @@ private:
         &VM::getx,
         &VM::print,
         &VM::scan,
+        &VM::shr,
+        &VM::shl,
     };
 
     /* status */
@@ -81,6 +83,8 @@ public:
     void getx();
     void print();
     void scan();
+    void shr();
+    void shl();
 };
 
 #endif
