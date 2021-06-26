@@ -63,13 +63,6 @@ int main(int argc, char ** args) {
 
     interpret(args[1]);
 
-    // for (int i=0; i<34; i++) {
-    //     if (program[i] != helloworld[i]) {
-    //         cout << "disini : " << i << endl;
-    //         exit(0);
-    //     }
-    // }
-
     VM vm(program);
 
     vm.run();
