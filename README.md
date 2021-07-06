@@ -9,8 +9,22 @@ Bahasa ini hanya terdiri dari 2 simbol yaitu 'w' dan 'k'. Pada bahasa ini, setia
 
 Semua instruksi dan konstanta pada bahasa ini dituliskan dalam wk-byte. Misalnya untuk `wwwwwwwkwkwkwkwk`, wk-byte pertama `wwwwwwwk` adalah instruksi untuk push, dan wk-byte kedua `wkwkwkwk` adalah konstanta 85, maka ketika perintah tersebut dijalankan, yang dilakukan adalah push 85 ke stack.
 
+Bahasa ini juga dilengkapi dengan penanganan syntax error, yaitu ketika ada karakter lain selain w dan k atau ketika panjang source code bukan merupakan kelipatan 8 (ingat bahwa semua instruksi dituliskan dalam wk-byte).
+
 ## Command
 
 ## Build
+Untuk menjalankan program dalam bahasa ini, interpreter `boi` harus di-build terlebih dahulu dengan menjalankan perintah berikut.
+```
+make
+```
 
 ## Run
+Source code program dalam bahasa ini dapat dijalankan dengan menggunakan interpreter `boi`.
+```
+./boi <wkwk-source-code>
+```
+Pada folder `example` telah disediakan beberapa program wkwk-lang, misalnya program cat sederhana yang dapat dijalankan dengan:
+```
+./boi example/cat.wkwk
+```
