@@ -1,6 +1,6 @@
 # WKWK LANG - Stack-Based Esolang
 
-Wkwk-lang adalah sebuah [bahasa pemrograman esoterik](https://en.wikipedia.org/wiki/Esoteric_programming_language) yang diimplementasikan secara stack-based. Selain memiliki stack memory, bahasa ini juga memiliki 3 buah register 32-bit, yaitu ip (instruction pointer), sp (stack pointer), dan ac (accumulator).
+Wkwk-lang adalah sebuah [bahasa pemrograman esoterik](https://en.wikipedia.org/wiki/Esoteric_programming_language) yang diimplementasikan secara stack-based. Selain memiliki stack memory dengan top 8-bit, bahasa ini juga memiliki 3 buah register 32-bit, yaitu ip (instruction pointer), sp (stack pointer), dan ac (accumulator).
 
 ## Syntax
 
@@ -14,7 +14,25 @@ Bahasa ini juga dilengkapi dengan penanganan syntax error, yaitu ketika ada kara
 ## Command
 Command | Operation | Description 
 :---: | :---: | --- 
-`wwwwwwww`| HALT | Stop the program. 
+`wwwwwwww`| HALT | Stop the program execution. 
+`wwwwwwwk`| PUSH | Push next wk-byte to the stack.
+`wwwwwwkw`| POP | Pop the stack.
+`wwwwwwkk`| ADD | Add 2 top element of the stack.
+`wwwwwkww`| SUB | Subtract 2nd top element of stack with top of stack.
+`wwwwwkwk`| MUL | Multiply 2 top element of the stack.
+`wwwwwkkw`| DIV | Divide 2nd top element of stack with top of stack.
+`wwwwkwww`| JMP | Move the ip according to the next wk-byte.
+`wwwwkwwk`| SWAP | Swap the last byte of ac with top of stack.
+`wwwwkwkw`| PUSHX| Push the last byte of ac to the stack.
+`wwwwkwkk`| POPX | Pop the stack & save the value to the last byte of ac.
+`wwwwkkww`| JE | JMP if last byte of ac is equal to top of stack.
+`wwwwkkwk`| JNE | JMP if last byte of ac is not equal to top of stack
+`wwwwkkkw`| JLT | JMP if last byte of ac less than top of stack.
+`wwwwkkkk`| JGT | JMP if last byte of ac greater than top of stack.
+`wwwkwwkw`| PRINT | Print top of stack.
+`wwwkwwkk`| SCAN | Read one byte input, push the value to the stack.
+`wwwkwkww`| SHR | Logical shift the ac 8 bit to the right.
+`wwwkwkwk`| SHL | Shift the ac 8 bit to the left.
 
 ## Build
 Untuk menjalankan program dalam bahasa ini, interpreter `boi` harus di-build terlebih dahulu dengan menjalankan perintah berikut.

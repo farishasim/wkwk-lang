@@ -18,9 +18,9 @@ private:
     byte * code;
     
     /* register */
-    int ip;     /* instruction pointer */
-    int sp;     /* stack pointer */
-    int ac;     /* accumulator */
+    unsigned int ip;     /* instruction pointer */
+    unsigned int sp;     /* stack pointer */
+    unsigned int ac;     /* accumulator */
 
     /* instruction table */
     typedef void (VM::*FunctionPointer)();
