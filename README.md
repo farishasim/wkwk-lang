@@ -12,6 +12,9 @@ Semua instruksi dan konstanta pada bahasa ini dituliskan dalam wk-byte. Misalnya
 Bahasa ini juga dilengkapi dengan penanganan syntax error, yaitu ketika ada karakter lain selain w dan k atau ketika panjang source code bukan merupakan kelipatan 8 (ingat bahwa semua instruksi dituliskan dalam wk-byte).
 
 ## Command
+Command | Operation | Description 
+:---: | :---: | --- 
+`wwwwwwww`| HALT | Stop the program. 
 
 ## Build
 Untuk menjalankan program dalam bahasa ini, interpreter `boi` harus di-build terlebih dahulu dengan menjalankan perintah berikut.
