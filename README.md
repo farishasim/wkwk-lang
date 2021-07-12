@@ -49,3 +49,16 @@ Pada folder `example` telah disediakan beberapa program wkwk-lang, misalnya prog
 ```
 ./boi example/cat.wkwk
 ```
+
+## Example
+Berikut ini adalah beberapa contoh program yang dituliskan pada bahasa ini.
+
+### 1. Program Cat sederhana
+```
+wwwkwwkkwwwkwwkwwwwwkwwwwwwwwwww
+```
+
+### 2. Program HelloWorld "sederhana"
+```
+wwwwwwwkwwwwwwwwwwwwkwkkwwwwkwkwwwwwwwwkwwwwkwkwwwwwwwwkwwkwwwwkwwwwwwwkwkkwwkwwwwwwwwwkwkkwkkwwwwwwwwwkwkkkwwkwwwwwwwwkwkkwkkkkwwwwwwwkwkkkwkkkwwwwwwwkwwkwwwwwwwwwwwwkwkkwkkkkwwwwwwwkwkkwkkwwwwwwwwwkwkkwkkwwwwwwwwwkwkkwwkwkwwwwwwwkwkkwkwwwwwwkwwkwwwwwwwkwwwwwkkwkwwwkkkkwwwwwwwww
+```
